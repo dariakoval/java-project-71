@@ -1,8 +1,6 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.FilenameUtils;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,11 +12,8 @@ import java.util.TreeSet;
 
 public class Differ {
     public static String generate(String filePath1, String filePath2) throws Exception {
-        String data1 = getData(filePath1);
-        String data2 = getData(filePath2);
-
-        Map<String, Object> map1 = getMap(data1);
-        Map<String, Object> map2 = getMap(data2);
+        Map<String, Object> map1 = getData(filePath1);
+        Map<String, Object> map2 = getData(filePath2);
         Map<String, String> mapDiff = genDiff(map1, map2);
 
         StringBuilder result = new StringBuilder("{\n");
@@ -37,19 +32,18 @@ public class Differ {
         result.append("}");
         return result.toString();
     }
-    public static String getData(String filePath) throws Exception {
+    public static Map<String, Object> getData(String filePath) throws Exception {
         Path path = Paths.get(filePath).toAbsolutePath().normalize();
         if (!Files.exists(path)) {
             throw new Exception("File '" + path + "' does not exist");
         }
-        return Files.readString(path);
+        String data = Files.readString(path);
+        if (FilenameUtils.getExtension(filePath).equals("json")) {
+            return Parser.parseJson(data);
+        } else {
+            return Parser.parseYaml(data);
+        }
     }
-    public static Map<String, Object> getMap(String json) throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(json, new TypeReference<>() {
-        });
-    }
-
     public static Map<String, String> genDiff(Map<String, Object> map1, Map<String, Object> map2) {
         Map<String, String> result = new LinkedHashMap<>();
         Set<String> keys = new TreeSet<>(map1.keySet());
