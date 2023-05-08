@@ -5,4 +5,4 @@
 [![asciicast](https://asciinema.org/a/qPVCpmrnVNpu843nioVmm7sX8.svg)](https://asciinema.org/a/qPVCpmrnVNpu843nioVmm7sX8)
 
 ## Asciinema 2: finding differences between two flat (only key-value pairs) yaml files.
-[![asciicast](https://asciinema.org/a/QsWLJYiHGvqXeExnq9WDc2nNY.svg)](https://asciinema.org/a/QsWLJYiHGvqXeExnq9WDc2nNY)
+[![asciicast](https://asciinema.org/a/pVP2J1yjm7KdqfnvTrDAz5Igi.svg)](https://asciinema.org/a/pVP2J1yjm7KdqfnvTrDAz5Igi)
