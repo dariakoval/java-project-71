@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -55,7 +56,7 @@ public class Differ {
                 result.put(key, "added");
             } else if (!map2.containsKey(key)) {
                 result.put(key, "deleted");
-            } else if (map1.get(key).equals(map2.get(key))) {
+            } else if (Objects.equals(map1.get(key), map2.get(key))) {
                 result.put(key, "unchanged");
             } else {
                 result.put(key, "changed");
