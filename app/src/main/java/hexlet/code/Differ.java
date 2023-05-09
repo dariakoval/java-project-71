@@ -12,26 +12,12 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Differ {
-    public static String generate(String filePath1, String filePath2) throws Exception {
+    public static String generate(String filePath1, String filePath2, String format) throws Exception {
         Map<String, Object> map1 = getData(filePath1);
         Map<String, Object> map2 = getData(filePath2);
         Map<String, String> mapDiff = genDiff(map1, map2);
 
-        StringBuilder result = new StringBuilder("{\n");
-        for (String key: mapDiff.keySet()) {
-            if (mapDiff.get(key).equals("added")) {
-                result.append("  + ").append(key).append(": ").append(map2.get(key)).append("\n");
-            } else if (mapDiff.get(key).equals("deleted")) {
-                result.append("  - ").append(key).append(": ").append(map1.get(key)).append("\n");
-            } else if (mapDiff.get(key).equals("unchanged")) {
-                result.append("    ").append(key).append(": ").append(map1.get(key)).append("\n");
-            } else {
-                result.append("  - ").append(key).append(": ").append(map1.get(key)).append("\n");
-                result.append("  + ").append(key).append(": ").append(map2.get(key)).append("\n");
-            }
-        }
-        result.append("}");
-        return result.toString();
+        return Formatter.selectFormatter(map1, map2, mapDiff, format);
     }
     public static Map<String, Object> getData(String filePath) throws Exception {
         Path path = Paths.get(filePath).toAbsolutePath().normalize();

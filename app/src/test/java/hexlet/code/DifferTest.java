@@ -35,7 +35,7 @@ class DifferTest {
                   - setting3: true
                   + setting3: none
                 }""";
-        assertThat(Differ.generate(filePath1, filePath2)).isEqualTo(expected);
+        assertThat(Differ.generate(filePath1, filePath2, "stylish")).isEqualTo(expected);
     }
     @Test
     void testGenerate2() throws Exception {
@@ -67,6 +67,6 @@ class DifferTest {
                   - setting3: true
                   + setting3: none
                 }""";
-        assertThat(Differ.generate(filePath1, filePath2)).isEqualTo(expected);
+        assertThat(Differ.generate(filePath1, filePath2, "stylish")).isEqualTo(expected);
     }
 }
