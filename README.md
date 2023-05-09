@@ -6,3 +6,9 @@
 
 ## Asciinema 2: finding differences between two flat (only key-value pairs) yaml files.
 [![asciicast](https://asciinema.org/a/pVP2J1yjm7KdqfnvTrDAz5Igi.svg)](https://asciinema.org/a/pVP2J1yjm7KdqfnvTrDAz5Igi)
+
+## Asciinema 3: finding differences between two json files with nested structures.
+[![asciicast](https://asciinema.org/a/wWUrUEyP0P91soeJBbEEOYjDR.svg)](https://asciinema.org/a/wWUrUEyP0P91soeJBbEEOYjDR)
+
+## Asciinema 4: finding differences between two yaml files with nested structures.
+[![asciicast](https://asciinema.org/a/KwKhkFdb4cflfa3jPE8EQqyCK.svg)](https://asciinema.org/a/KwKhkFdb4cflfa3jPE8EQqyCK)
