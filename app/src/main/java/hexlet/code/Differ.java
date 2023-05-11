@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.formatters.Stylish;
 import org.apache.commons.io.FilenameUtils;
 
 import java.nio.file.Files;
@@ -12,6 +13,13 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Differ {
+    public static String generate(String filePath1, String filePath2) throws Exception {
+        Map<String, Object> map1 = getData(filePath1);
+        Map<String, Object> map2 = getData(filePath2);
+        Map<String, String> mapDiff = genDiff(map1, map2);
+
+        return Stylish.genStylish(map1, map2, mapDiff);
+    }
     public static String generate(String filePath1, String filePath2, String format) throws Exception {
         Map<String, Object> map1 = getData(filePath1);
         Map<String, Object> map2 = getData(filePath2);
