@@ -15,3 +15,6 @@
 
 ## Asciinema 5: finding differences between two yaml files with output in plain format.
 [![asciicast](https://asciinema.org/a/kdRtQpY2kYBVCgzZXmkXFJBMj.svg)](https://asciinema.org/a/kdRtQpY2kYBVCgzZXmkXFJBMj)
+
+## Asciinema 6: finding differences between two json files with output in json format.
+[![asciicast](https://asciinema.org/a/6fV2jBGXCzCUWDkpu7bsWNgMi.svg)](https://asciinema.org/a/6fV2jBGXCzCUWDkpu7bsWNgMi)
