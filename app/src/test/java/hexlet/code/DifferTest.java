@@ -89,4 +89,84 @@ class DifferTest {
                 Property 'setting3' was updated. From true to 'none'""";
         assertThat(Differ.generate(filePath1, filePath2, "plain")).isEqualTo(expected);
     }
+    @Test
+    void testGenerate4() throws Exception {
+        String filePath1 = "src/test/resources/file10.json";
+        String filePath2 = "src/test/resources/file20.json";
+        String expected = """
+                {
+                  "key: chars1" : {
+                    "status" : "unchanged",
+                    "value1" : [ "a", "b", "c" ]
+                  },
+                  "key: chars2" : {
+                    "status" : "changed",
+                    "value1" : [ "d", "e", "f" ],
+                    "value2" : false
+                  },
+                  "key: checked" : {
+                    "status" : "changed",
+                    "value1" : false,
+                    "value2" : true
+                  },
+                  "key: default" : {
+                    "status" : "changed",
+                    "value1" : null,
+                    "value2" : [ "value1", "value2" ]
+                  },
+                  "key: id" : {
+                    "status" : "changed",
+                    "value1" : 45,
+                    "value2" : null
+                  },
+                  "key: key1" : {
+                    "status" : "deleted",
+                    "value1: " : "value1"
+                  },
+                  "key: key2" : {
+                    "status" : "added",
+                    "value2" : "value2"
+                  },
+                  "key: numbers1" : {
+                    "status" : "unchanged",
+                    "value1" : [ 1, 2, 3, 4 ]
+                  },
+                  "key: numbers2" : {
+                    "status" : "changed",
+                    "value1" : [ 2, 3, 4, 5 ],
+                    "value2" : [ 22, 33, 44, 55 ]
+                  },
+                  "key: numbers3" : {
+                    "status" : "deleted",
+                    "value1: " : [ 3, 4, 5 ]
+                  },
+                  "key: numbers4" : {
+                    "status" : "added",
+                    "value2" : [ 4, 5, 6 ]
+                  },
+                  "key: obj1" : {
+                    "status" : "added",
+                    "value2" : {
+                      "nestedKey" : "value",
+                      "isNested" : true
+                    }
+                  },
+                  "key: setting1" : {
+                    "status" : "changed",
+                    "value1" : "Some value",
+                    "value2" : "Another value"
+                  },
+                  "key: setting2" : {
+                    "status" : "changed",
+                    "value1" : 200,
+                    "value2" : 300
+                  },
+                  "key: setting3" : {
+                    "status" : "changed",
+                    "value1" : true,
+                    "value2" : "none"
+                  }
+                }""";
+        assertThat(Differ.generate(filePath1, filePath2, "json")).isEqualTo(expected);
+    }
 }

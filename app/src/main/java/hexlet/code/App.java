@@ -10,7 +10,8 @@ import java.util.concurrent.Callable;
 @Command(name = "gendiff", mixinStandardHelpOptions = true, version = "gendiff 1.0",
         description = "Compares two configuration files and shows a difference.")
 public class App implements Callable<Integer>  {
-    @Option(names = { "-f", "--format" }, description = "output format [default: ${DEFAULT-VALUE}]",
+    @Option(names = { "-f", "--format" },
+            description = "output format: stylish, plain, json [default: ${DEFAULT-VALUE}]",
             defaultValue = "stylish")
     String format;
     @Parameters(paramLabel = "filepath1", description = "path to first file")
