@@ -13,7 +13,7 @@ public class App implements Callable<Integer>  {
     @Option(names = { "-f", "--format" },
             description = "output format: stylish, plain, json [default: ${DEFAULT-VALUE}]",
             defaultValue = "stylish")
-    String format;
+    static String format;
     @Parameters(paramLabel = "filepath1", description = "path to first file")
     private String filePath1;
     @Parameters(paramLabel = "filepath2", description = "path to second file")
