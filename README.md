@@ -12,3 +12,6 @@
 
 ## Asciinema 4: finding differences between two yaml files with nested structures.
 [![asciicast](https://asciinema.org/a/KwKhkFdb4cflfa3jPE8EQqyCK.svg)](https://asciinema.org/a/KwKhkFdb4cflfa3jPE8EQqyCK)
+
+## Asciinema 5: finding differences between two yaml files with output in plain format.
+[![asciicast](https://asciinema.org/a/kdRtQpY2kYBVCgzZXmkXFJBMj.svg)](https://asciinema.org/a/kdRtQpY2kYBVCgzZXmkXFJBMj)
