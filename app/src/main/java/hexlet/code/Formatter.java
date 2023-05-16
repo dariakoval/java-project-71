@@ -8,12 +8,12 @@ import hexlet.code.formatters.Stylish;
 import java.util.Map;
 
 public class Formatter {
-    public static String selectFormatter(Map<String, Object> map1, Map<String, Object> map2, Map<String,
-            String> mapDiff, String format) throws JsonProcessingException {
+    public static String selectFormatter(Map<String, Map<String, Object>> mapDiff, String format)
+            throws JsonProcessingException {
         return switch (format) {
-            case "plain" -> Plain.genPlain(map1, map2, mapDiff);
-            case "json" -> Json.genJson(map1, map2, mapDiff);
-            default -> Stylish.genStylish(map1, map2, mapDiff);
+            case "plain" -> Plain.genPlain(mapDiff);
+            case "json" -> Json.genJson(mapDiff);
+            default -> Stylish.genStylish(mapDiff);
         };
     }
 
