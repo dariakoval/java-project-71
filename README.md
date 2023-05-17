@@ -11,6 +11,7 @@ This application compares two configuration files, taking two arguments through 
 
 ## Asciinema 1: 
 output of help information
+
 [![asciicast](https://asciinema.org/a/1F1ReFztilrot8PTso5iyekcc.svg)](https://asciinema.org/a/1F1ReFztilrot8PTso5iyekcc)
 
 ## Asciinema 2: 
