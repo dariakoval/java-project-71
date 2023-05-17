@@ -14,6 +14,7 @@ public class DifferenceCalculator {
 
         for (String key: keys) {
             Map<String, Object> element = new LinkedHashMap<>();
+
             if (!map1.containsKey(key)) {
                 element.put("status", "added");
                 element.put("value2", map2.get(key));
@@ -33,6 +34,7 @@ public class DifferenceCalculator {
                 result.put(key, element);
             }
         }
+
         return result;
     }
 }

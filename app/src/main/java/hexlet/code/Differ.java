@@ -11,6 +11,7 @@ public class Differ {
     public static String generate(String filePath1, String filePath2) throws Exception {
         return generate(filePath1, filePath2, "stylish");
     }
+
     public static String generate(String filePath1, String filePath2, String format) throws Exception {
         Map<String, Object> map1 = getData(filePath1);
         Map<String, Object> map2 = getData(filePath2);
@@ -18,17 +19,17 @@ public class Differ {
 
         return Formatter.selectFormatter(mapDiff, format);
     }
+
     public static Map<String, Object> getData(String filePath) throws Exception {
         Path path = Paths.get(filePath).toAbsolutePath().normalize();
+
         if (!Files.exists(path)) {
             throw new Exception("File '" + path + "' does not exist");
         }
-        String data = Files.readString(path).trim();
-        String extension = FilenameUtils.getExtension(filePath);
-        return switch (extension) {
-            case "json" -> Parser.parseJson(data);
-            case "yml" -> Parser.parseYaml(data);
-            default -> throw new Error("Unknown : extension" + extension);
-        };
+
+        String content = Files.readString(path).trim();
+        String dataFormat = FilenameUtils.getExtension(filePath);
+
+        return Parser.parse(content, dataFormat);
     }
 }

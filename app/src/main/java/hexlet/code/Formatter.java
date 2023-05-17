@@ -13,8 +13,8 @@ public class Formatter {
         return switch (format) {
             case "plain" -> Plain.genPlain(mapDiff);
             case "json" -> Json.genJson(mapDiff);
-            default -> Stylish.genStylish(mapDiff);
+            case  "stylish" -> Stylish.genStylish(mapDiff);
+            default -> throw new RuntimeException("Invalid format: " + format);
         };
     }
-
 }
