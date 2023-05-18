@@ -10,8 +10,8 @@ import java.util.Map;
 public class Parser {
     public static Map<String, Object> parse(String content, String dataFormat) throws Exception {
         return switch (dataFormat) {
+            case "yml", "yaml" -> parseYaml(content);
             case "json" -> parseJson(content);
-            case "yml" -> parseYaml(content);
             default -> throw new Exception("Unknown format: '" + dataFormat + "'");
         };
     }

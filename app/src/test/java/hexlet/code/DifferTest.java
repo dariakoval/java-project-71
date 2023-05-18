@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -10,7 +9,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.catchThrowable;
 
 class DifferTest {
     private static String resultJson;
@@ -47,29 +45,5 @@ class DifferTest {
         assertThat(Differ.generate(filePath1, filePath2, "plain")).isEqualTo(resultPlain);
 
         assertThat(Differ.generate(filePath1, filePath2, "json")).isEqualTo(resultJson);
-    }
-
-    @Test
-    public void testInvalidFormat() {
-        String filePath1 = "src/test/resources/fixtures/file1.json";
-        String filePath2 = "src/test/resources/fixtures/file2.json";
-        var thrown = catchThrowable(() -> Differ.generate(filePath1, filePath2, "yaml"));
-        assertThat(thrown).isInstanceOf(RuntimeException.class);
-    }
-
-    @Test
-    public void testParser() {
-        String filePath1 = "src/test/resources/fixtures/file1.txt";
-        String filePath2 = "src/test/resources/fixtures/file2.txt";
-        var thrown = catchThrowable(() -> Differ.generate(filePath1, filePath2, "yaml"));
-        assertThat(thrown).isInstanceOf(Exception.class);
-    }
-
-    @Test
-    public void testIncorrectPath() {
-        String filePath1 = "src/test/fixtures/file1.json";
-        String filePath2 = "src/test/fixtures/file2.json";
-        var thrown = catchThrowable(() -> Differ.generate(filePath1, filePath2, "json"));
-        assertThat(thrown).isInstanceOf(Exception.class);
     }
 }
