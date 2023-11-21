@@ -28,7 +28,7 @@ This application compares two configuration files, taking two arguments through 
 * JDK 17
 * Gradle 7.4
 * GNU Make
-* 
+
 ## Technology stack
 Java, Gradle, GNU Make, Checkstyle, JUnit, Jacoco, GitHub Actions, Code Climate.
 
