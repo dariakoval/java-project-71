@@ -24,19 +24,30 @@ This application compares two configuration files, taking two arguments through 
 
 - [finding differences between two json files with output in json format](https://asciinema.org/a/6fV2jBGXCzCUWDkpu7bsWNgMi)
 
+## Requirements
+* JDK 17
+* Gradle 7.4
+* GNU Make
+* 
+## Technology stack
+Java, Gradle, GNU Make, Checkstyle, JUnit, Jacoco, GitHub Actions, Code Climate.
+
+## Setup
+```bash
+make setup
+```
+
 ## Build
 ```bash
 make build
 ```
 
 ## Run
-
 ```bash
 make run-dist
 ```
 
 ## Test
-
 ```bash
 make test
 ```
