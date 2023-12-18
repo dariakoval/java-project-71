@@ -6,7 +6,7 @@
 ## Description
 This application compares two configuration files, taking two arguments through the command line - the paths to these files. The result of file comparison can be displayed in different formats: stylish(default), plain and json.
 
-*To learn more about usage, go to asciinemas.*
+*To learn more about usage, go to [asciinemas](https://github.com/dariakoval/java-project-71?tab=readme-ov-file#asciinemas).*
 
 ## Asciinemas 
 - output of help information
