@@ -1,7 +1,7 @@
 # Difference calculator CLI Utility
 
 ## Tests and linter status
-[![Actions Status](https://github.com/dariakoval/java-project-71/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/dariakoval/java-project-71/actions)                [![Java CI](https://github.com/dariakoval/java-project-71/actions/workflows/generate.yml/badge.svg)](https://github.com/dariakoval/java-project-71/actions/workflows/generate.yml)                [![Maintainability](https://api.codeclimate.com/v1/badges/24b9f20c4dde45de5998/maintainability)](https://codeclimate.com/github/dariakoval/java-project-71/maintainability)              [![Test Coverage](https://api.codeclimate.com/v1/badges/24b9f20c4dde45de5998/test_coverage)](https://codeclimate.com/github/dariakoval/java-project-71/test_coverage)
+[![Java CI](https://github.com/dariakoval/java-project-71/actions/workflows/generate.yml/badge.svg)](https://github.com/dariakoval/java-project-71/actions/workflows/generate.yml)                [![Maintainability](https://api.codeclimate.com/v1/badges/24b9f20c4dde45de5998/maintainability)](https://codeclimate.com/github/dariakoval/java-project-71/maintainability)              [![Test Coverage](https://api.codeclimate.com/v1/badges/24b9f20c4dde45de5998/test_coverage)](https://codeclimate.com/github/dariakoval/java-project-71/test_coverage)
 
 ## Description
 This application compares two configuration files, taking two arguments through the command line - the paths to these files. The result of file comparison can be displayed in different formats: stylish(default), plain and json.
